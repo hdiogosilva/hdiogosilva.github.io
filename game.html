@@ -63,11 +63,9 @@
     </body>
     <script>
     
-    var m = document.querySelector("#bird-model")
+    var m = document.querySelector("a-marker")
     m.addEventListener("markerFound", (e)=>{
     console.log("found")
-    var audio1 = new Audio('assets/audio/aud1.mp3');
-    audio1.play();
     })
 
     m.addEventListener("markerLost", (e)=>{
