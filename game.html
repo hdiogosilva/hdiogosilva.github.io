@@ -65,6 +65,17 @@
                 emitevents="true"
                 id="markerB"
             >
+            <a-entity
+                id="bird-model"
+                gltf-model="scene.gltf"
+                position="0 0 0"
+                scale="15 15 15"
+                rotation="-45 0 0"
+                class="clickable"
+                gesture-handler
+                animation-mixer="clip: hover;"
+                >
+                </a-entity>
             </a-marker>
             
             <a-entity camera></a-entity>
