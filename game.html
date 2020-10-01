@@ -65,11 +65,13 @@
     
     var m = document.querySelector("#bird-model")
     m.addEventListener("markerFound", (e)=>{
+    console.log("found")
     var audio1 = new Audio('assets/audio/aud1.mp3');
     audio1.play();
     })
 
     m.addEventListener("markerLost", (e)=>{
+    console.log("lost")
     })
     
     </script>
