@@ -58,13 +58,13 @@
                 </a-entity>
             </a-marker>
             
-             <a-marker
-                type="pattern"
-                url="assets/markers/marker1.jpg"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerB"
+             <a-nft
+                type="nft"
+                url="<assets/markers/marker1.fset3>"
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance=".01"
+                smoothThreshold="5"
             >
                 <a-entity
                 id="mouse-model"
@@ -75,10 +75,9 @@
                 class="clickable"
                 gesture-handler
                 animation-mixer="clip: hover;"
-                sound="src: #aud1 ;"
                 >
                 </a-entity>
-            </a-marker>
+            </a-nft>
             
             <a-entity camera></a-entity>
         </a-scene>
