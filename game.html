@@ -63,8 +63,6 @@
     </body>
     <script>
     
-    var audio1 = new Audio('assets/audio/aud1.mp3');
-    
     var m = document.querySelector('#markerA')
     var a = document.querySelector('[sound]');
     
@@ -75,6 +73,7 @@
 
     m.addEventListener("markerLost", (e)=>{
     console.log("lost")
+    a.components.sound.stopSound();
     })
     
     </script>
