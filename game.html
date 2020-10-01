@@ -67,12 +67,10 @@
     var a = document.querySelector('[sound]');
     
     m.addEventListener("markerFound", (e)=>{
-    console.log("found")
     a.components.sound.playSound();
     })
 
     m.addEventListener("markerLost", (e)=>{
-    console.log("lost")
     a.components.sound.stopSound();
     })
     
