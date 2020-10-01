@@ -19,20 +19,6 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    
-    <script>
-    
-    var m = document.querySelector("#bird-model")
-    m.addEventListener("markerFound", (e)=>{
-    var audio1 = new Audio('assets/audio/aud1.mp3');
-    audio1.play();
-    })
-
-    m.addEventListener("markerLost", (e)=>{
-    })
-    
-    </script>
-    
     <body style="margin : 0px; overflow: hidden;">
         <div class="titulo">
             <h1>À Procura do Tritão</h1>
@@ -75,4 +61,16 @@
         </a-scene>
         
     </body>
+    <script>
+    
+    var m = document.querySelector("#bird-model")
+    m.addEventListener("markerFound", (e)=>{
+    var audio1 = new Audio('assets/audio/aud1.mp3');
+    audio1.play();
+    })
+
+    m.addEventListener("markerLost", (e)=>{
+    })
+    
+    </script>
 </html>
