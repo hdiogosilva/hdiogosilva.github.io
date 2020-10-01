@@ -34,7 +34,7 @@
             >
             <a-assets>
                 <a-entity cursor position="0 0 -5"></a-entity>
-                <audio id="oud1" src="assets/audio/aud1.mp3" preload="auto"></audio>
+                <audio id="aud1" src="assets/audio/aud1.mp3" preload="auto"></audio>
             </a-assets>
 
             <a-marker
@@ -53,7 +53,7 @@
                 class="clickable"
                 gesture-handler
                 animation-mixer="clip: hover;"
-                sound="src: url(assets/audio/aud1.mp3) ; on: click"
+                sound="src: #aud1 ; on: click"
                 >
                 </a-entity>
             </a-marker>
