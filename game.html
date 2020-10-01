@@ -63,10 +63,11 @@
     </body>
     <script>
     
-    var m = document.querySelector("a-marker")
+    var audio1 = new Audio('assets/audio/aud1.mp3');
+    
+    var m = document.querySelector('#markerA')
     m.addEventListener("markerFound", (e)=>{
     console.log("found")
-    var audio1 = new Audio('assets/audio/aud1.mp3');
     audio1.play();
     })
 
