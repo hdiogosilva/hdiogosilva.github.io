@@ -66,9 +66,11 @@
     var audio1 = new Audio('assets/audio/aud1.mp3');
     
     var m = document.querySelector('#markerA')
+    var a = document.querySelector('[sound]');
+    
     m.addEventListener("markerFound", (e)=>{
     console.log("found")
-    audio1.play();
+    a.components.sound.playSound();
     })
 
     m.addEventListener("markerLost", (e)=>{
