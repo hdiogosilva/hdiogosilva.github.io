@@ -37,9 +37,10 @@
                 <audio id="aud1" src="assets/audio/aud1.mp3" preload="auto"></audio>
             </a-assets>
 
+             <!-- Marker: Passaro     Modelo: Passaro-->
             <a-marker
                 type="pattern"
-                url="assets/markers_john/pattern-human.patt"
+                url="assets/markers/pattern-chapim.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -59,9 +60,33 @@
                 </a-entity>
             </a-marker>
             
+            <!-- Marker: Passaro     Modelo: Tritão-->
+            <a-marker
+                type="pattern"
+                url="assets/markers_john/dimmersions_logo.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                id="bird-model"
+                gltf-model="assets/models/tritao/scene.gltf"
+                position="0 0 0"
+                scale="15 15 15"
+                rotation="-45 0 0"
+                class="clickable"
+                gesture-handler
+                animation-mixer="clip: hover;"
+                sound="src: #aud1 ;"
+                >
+                </a-entity>
+            </a-marker>
+            
+             <!-- Marker: Humano     Modelo: Rato-->
              <a-marker
                 type="pattern"
-                url="assets/markers/pattern-chapim.patt"
+                url="assets/markers_john/pattern-human.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 id="markerB"
@@ -79,6 +104,7 @@
                 </a-entity>
             </a-marker>
             
+            <!-- Marker: Porco     Modelo: Rato-->
             <a-marker
                 type="pattern"
                 url="assets/markers_john/porco.patt"
@@ -99,6 +125,7 @@
                 </a-entity>
             </a-marker>
             
+            <!-- Marker: Pato Modelo: Peixe -->
             <a-marker
                 type="pattern"
                 url="assets/markers_john/pato.patt"
@@ -109,6 +136,27 @@
             <a-entity
                 id="bird-model"
                 gltf-model="assets/models/fish/scene.gltf"
+                position="0 0 0"
+                scale="0.001 0.001 0.001"
+                rotation="-85 0 0"
+                class="clickable"
+                gesture-handler
+                animation-mixer="clip: *;"
+                >
+                </a-entity>
+            </a-marker>
+            
+            <!-- Marker: Cao Modelo: Arvore -->
+            <a-marker
+                type="pattern"
+                url="assets/markers_john/pattern-dog.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                id="markerD"
+            >
+            <a-entity
+                id="bird-model"
+                gltf-model="assets/models/tree/scene.gltf"
                 position="0 0 0"
                 scale="0.001 0.001 0.001"
                 rotation="-85 0 0"
