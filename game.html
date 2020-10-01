@@ -181,7 +181,15 @@
     
     m.addEventListener("markerFound", (e)=>{
     a.components.sound.playSound();
-    console.log("found")
+    
+    var perg1 = prompt("Estás na Galeria da ...", "");
+
+    if (perg1 != "Biodiversidade") {
+    txt = "Hmmm... Acho que não é essa a resposta certa...";
+    } else {
+    txt = "Exatamente!";
+    }
+    
     })
 
     m.addEventListener("markerLost", (e)=>{
