@@ -57,6 +57,29 @@
                 >
                 </a-entity>
             </a-marker>
+            
+             <a-marker
+                type="pattern"
+                url="assets/markers/marker1.jpg"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerB"
+            >
+                <a-entity
+                id="mouse-model"
+                gltf-model="scene.gltf"
+                position="0 0 0"
+                scale="15 15 15"
+                rotation="-45 0 0"
+                class="clickable"
+                gesture-handler
+                animation-mixer="clip: hover;"
+                sound="src: #aud1 ;"
+                >
+                </a-entity>
+            </a-marker>
+            
             <a-entity camera></a-entity>
         </a-scene>
         
@@ -64,6 +87,7 @@
     <script>
     
     var m = document.querySelector('#markerA')
+    var n = document.querySelector('#markerB')
     var a = document.querySelector('[sound]');
     
     m.addEventListener("markerFound", (e)=>{
@@ -72,6 +96,10 @@
 
     m.addEventListener("markerLost", (e)=>{
     a.components.sound.stopSound();
+    })
+    
+    n.addEventListener("markerFound", (e)=>{
+    console.log("found")
     })
     
     </script>
