@@ -32,6 +32,7 @@
             <audio id="aud_chapim2" src="assets/audio/Chapim_2.mp3" preload="auto"></audio>
             <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
             <audio id="aud_tree" src="assets/audio/aud_tree.mp3" preload="auto"></audio>
+            <audio id="aud_rato" src="assets/audio/Ratinho.mp3" preload="auto"></audio>
         </a-assets>
 
         <!-- Marker: Passaro1     Modelo: Passaro-->
@@ -48,15 +49,16 @@
         </a-marker>
 
 
-        <!-- Marker: logo     Modelo: Tritão-->
+        <!-- Marker: logo     Modelo: Tritão
         <a-marker type="pattern" url="assets/markers_john/dimmersions_logo.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker_tritao" class="marker">
             <a-entity id="newt-model" gltf-model="assets/models/tritao/scene.gltf" position="0 0 0" scale="0.1 0.1 0.1" rotation="-45 0 0" class="clickable" gesture-handler animation-mixer="clip: hover;" sound="src: #aud_bird ;">
             </a-entity>
         </a-marker>
+        -->
 
         <!-- Marker: Cão     Modelo: Rato-->
         <a-marker type="pattern" url="assets/markers_john/pattern-dog.patt" raycaster="objects: .clickable" emitevents="true" id="marker_mouse" class="marker">
-            <a-entity id="mouse-model" gltf-model="assets/models/mouse/scene.gltf" position="0 0 0" scale="0.6 0.6 0.6" rotation="-85 0 0" class="clickable" gesture-handler animation-mixer="clip: *;">
+            <a-entity id="mouse-model" gltf-model="assets/models/mouse/scene.gltf" position="0 0 0" scale="0.6 0.6 0.6" rotation="-85 0 0" class="clickable" gesture-handler animation-mixer="clip: *;" sound="src: #aud_rato ;">
             </a-entity>
         </a-marker>
 
@@ -91,7 +93,9 @@
     // Carpas
     var sf = document.querySelector('a-entity#fish-model[sound]');
     // Tree
-    var sf = document.querySelector('a-entity#tree-model[sound]');
+    var st = document.querySelector('a-entity#tree-model[sound]');
+    // Tree
+    var sm = document.querySelector('a-entity#mouse-model[sound]');
 
 
     // Chapim 1
@@ -172,10 +176,31 @@
                 console.log(error);
             }
         );
-        sf.components.sound.playSound();
+        st.components.sound.playSound();
     })
 
     r.addEventListener("markerLost", (e) => {
+        // a.components.sound.stopSound();
+    })
+    
+    // Rato
+    m.addEventListener("markerFound", (e) => {
+        axios.post('https://tritoes.hdiogosilva.xyz/batas.html', params = {
+            entity: 'mouse'
+        }).then(
+            (response) => {
+                var result = response.data;
+                console.log('Processing Request');
+                return (result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+        sm.components.sound.playSound();
+    })
+
+    m.addEventListener("markerLost", (e) => {
         // a.components.sound.stopSound();
     })
 </script>
