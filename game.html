@@ -97,12 +97,8 @@
 
     // Chapim 1
     b1.addEventListener("markerFound", (e) => {
-        axios.post({
-            method: 'post',
-            url: 'https://tritoes.hdiogosilva.xyz/batas.html',
-            data: {
-                entity: 'chapim'
-            }
+        axios.post('https://tritoes.hdiogosilva.xyz/batas.html', params = {
+            entity: 'chapim'
         }).then(
             (response) => {
                 var result = response.data;
