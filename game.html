@@ -98,7 +98,7 @@
     // Mouse
     var sm = document.querySelector('a-entity#mouse-model[sound]');
     // Tritao
-    var sm = document.querySelector('a-entity#newt-model[sound]');
+    var sr = document.querySelector('a-entity#newt-model[sound]');
 
 
     // Chapim 1
@@ -221,7 +221,7 @@
                 console.log(error);
             }
         );
-        st.components.sound.playSound();
+        sr.components.sound.playSound();
     })
 
     t.addEventListener("markerLost", (e) => {
