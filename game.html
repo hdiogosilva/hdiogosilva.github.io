@@ -172,22 +172,22 @@
     
     b.addEventListener("markerFound", (e)=>{
         console.log("found bird")
-        a.components.sound.playSound();
+        sb.components.sound.playSound();
     })
 
     b.addEventListener("markerLost", (e)=>{
         console.log("lost bird")
-        a.components.sound.stopSound();
+        // a.components.sound.stopSound();
     })
     
     f.addEventListener("markerFound", (e)=>{
         console.log("found fish")
-        a.components.sound.playSound();
+        sf.components.sound.playSound();
     })
 
     f.addEventListener("markerLost", (e)=>{
         console.log("lost fish")
-        a.components.sound.stopSound();
+        // a.components.sound.stopSound();
     })
     
     </script>
