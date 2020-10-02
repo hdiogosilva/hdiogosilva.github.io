@@ -474,16 +474,19 @@
 </body>
 <script>
     const makeGetRequest = async() => {
-        const response = await axios.get('https://tritoes.hdiogosilva.xyz/game.html').then(
-            (response) => {
-                let result = response.data;
-                console.log(result);
-                return (result);
-            },
-            (error) => {
-                console.log(error);
+        try {
+            const response = await fetch('https://tritoes.hdiogosilva.xyz/game.html')
+            if (response.status === 200) {
+                console.log("Machine successfully found.");
+                const myJson = await response.json(); //extract JSON from the http response
+                console.log(myJson);
+            } else {
+                console.log("not a 200");
             }
-        );
+        } catch (err) {
+            // catches errors both in fetch and response.json
+            console.log(err);
+        }
     }
 
     function main() {
