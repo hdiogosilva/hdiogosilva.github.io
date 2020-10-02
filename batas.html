@@ -474,7 +474,7 @@
 </body>
 <script>
     function makeGetRequest(path) {
-        return await axios.get(path).then(
+        axios.get(path).then(
             (response) => {
                 var result = response.data;
                 console.log('Processing Request');
@@ -488,7 +488,7 @@
 
     function main() {
         var response = makeGetRequest('https://tritoes.hdiogosilva.xyz/game.html');
-        console.log(response);
+        console.log(response.data);
         console.log('Statement 2');
     }
     main();
