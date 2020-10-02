@@ -34,7 +34,7 @@
             >
             <a-assets>
                 <a-entity cursor position="0 0 -5"></a-entity>
-                <audio id="aud1" src="assets/audio/aud1.mp3" preload="auto"></audio>
+                <audio id="aud_bird" src="assets/audio/aud1.mp3" preload="auto"></audio>
                 <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
             </a-assets>
 
@@ -58,7 +58,7 @@
                 class="clickable"
                 gesture-handler
                 animation-mixer="clip: hover;"
-                sound="src: #aud1 ;"
+                sound="src: #aud_bird ;"
                 >
                 </a-entity>
             </a-marker>
@@ -83,7 +83,7 @@
                 class="clickable"
                 gesture-handler
                 animation-mixer="clip: hover;"
-                sound="src: #aud1 ;"
+                sound="src: #aud_bird ;"
                 >
                 </a-entity>
             </a-marker>
@@ -128,7 +128,7 @@
                 class="clickable"
                 gesture-handler
                 animation-mixer="clip: *;"
-                sound="src: #aud_carpas.mp3 ;"
+                sound="src: #aud_carpas ;"
                 >
                 </a-entity>
             </a-marker>
@@ -167,7 +167,8 @@
     var f = document.querySelector('#marker_fish')
     var r = document.querySelector('#marker_tree')
     
-    var a = document.querySelector('[sound]');
+    var sb = document.querySelector('#aud_bird');
+    var sf = document.querySelector('#aud_carpas');
     
     b.addEventListener("markerFound", (e)=>{
         console.log("found bird")
