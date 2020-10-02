@@ -35,10 +35,11 @@
             <a-assets>
                 <a-entity cursor position="0 0 -5"></a-entity>
                 <audio id="aud_bird" src="assets/audio/aud1.mp3" preload="auto"></audio>
+                <audio id="aud_chapim2" src="assets/audio/Chapim_2.mp3" preload="auto"></audio>
                 <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
             </a-assets>
 
-             <!-- Marker: Passaro     Modelo: Passaro-->
+             <!-- Marker: Passaro1     Modelo: Passaro-->
              
              <a-marker
                 type="pattern"
@@ -59,6 +60,29 @@
                 gesture-handler
                 animation-mixer="clip: hover;"
                 sound="src: #aud_bird ;"
+                >
+                </a-entity>
+            </a-marker>
+            
+            <!-- Marker: Hiro     Modelo: Passaro-->
+             
+             <a-marker preset="hiro"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="marker_bird2"
+                class="marker"
+            >
+                <a-entity
+                id="bird-model2"
+                gltf-model="assets/models/bird/scene.gltf"
+                position="0 0 0"
+                scale="15 15 15"
+                rotation="-45 0 0"
+                class="clickable"
+                gesture-handler
+                animation-mixer="clip: hover;"
+                sound="src: #aud_chapim2 ;"
                 >
                 </a-entity>
             </a-marker>
@@ -161,38 +185,46 @@
     </body>
     <script>
     
-    var b = document.querySelector('#marker_bird')
+    var b1 = document.querySelector('#marker_bird')
+    var b2 = document.querySelector('#marker_bird2')
     var t = document.querySelector('#marker_tritao')
     var m = document.querySelector('#marker_mouse')
     var f = document.querySelector('#marker_fish')
     var r = document.querySelector('#marker_tree')
     
-    // var sb = document.querySelector('#aud_bird');
+    // Chapim1
     var sb = document.querySelector('a-entity#bird-model[sound]');
-    // var sf = document.querySelector('#aud_carpas');
+    // Chapim2
+    var sb = document.querySelector('a-entity#bird-model2[sound]');
+    // Carpas
     var sf = document.querySelector('a-entity#fish-model[sound]');
     
     
-    // Chapim
-    b.addEventListener("markerFound", (e)=>{
-        console.log("found bird")
+    // Chapim 1
+    b1.addEventListener("markerFound", (e)=>{
         sb.components.sound.playSound();
     })
 
-    b.addEventListener("markerLost", (e)=>{
-        console.log("lost bird")
+    b1.addEventListener("markerLost", (e)=>{
+        // a.components.sound.stopSound();
+    })
+    
+    // Chapim 2
+    b1.addEventListener("markerFound", (e)=>{
+        sb.components.sound.playSound();
+    })
+
+    b1.addEventListener("markerLost", (e)=>{
         // a.components.sound.stopSound();
     })
     
     
     // Carpas
     f.addEventListener("markerFound", (e)=>{
-        console.log("found fish")
         sf.components.sound.playSound();
     })
 
     f.addEventListener("markerLost", (e)=>{
-        console.log("lost fish")
         // a.components.sound.stopSound();
     })
     
