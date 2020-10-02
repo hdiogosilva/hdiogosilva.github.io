@@ -121,7 +121,6 @@
                 }
             }
         }
-
         http_request.onreadystatechange = function() {
 
             if (http_request.readyState == 4) {
@@ -131,13 +130,13 @@
                 console.log(jsonObj)
             }
         }
-
         http_request.open("GET", data_file, true);
         http_request.send();
     }
 
     // Chapim 1
     b1.addEventListener("markerFound", (e) => {
+        loadJSON()
         sb.components.sound.playSound();
     })
 
