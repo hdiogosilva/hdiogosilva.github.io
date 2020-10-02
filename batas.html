@@ -606,7 +606,10 @@
     var btn = document.getElementById("myBtn");
 
     // Get the button that answers the question
-    let btn2 = document.getElementById("myBtn" + image_src_number);
+    let btn1 = document.getElementById("myBtn1");
+    let btn2 = document.getElementById("myBtn2");
+    let btn3 = document.getElementById("myBtn3");
+    let btn4 = document.getElementById("myBtn4");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -616,19 +619,35 @@
         modal.style.display = "block";
     }
 
-    btn2.onclick = function() {
-        next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
+    btn1.onclick = function() {
+        next_image = image_src.slice(0, image_src.length - 5) + 2 + '.jpg';
         document.getElementById("mapa").src = next_image;
-
         modal.style.display = "none";
-        modal = document.getElementById("myModal" + (image_src_number + 1));
-        flag = true;
-
+        modal = document.getElementById("myModal" + 2);
     }
-
-    if (flag == true) {
-        btn2 = document.getElementById("myBtn" + image_src_number);
-        flag = false;
+    btn2.onclick = function() {
+        next_image = image_src.slice(0, image_src.length - 5) + 3 + '.jpg';
+        document.getElementById("mapa").src = next_image;
+        modal.style.display = "none";
+        modal = document.getElementById("myModal" + 3);
+    }
+    btn3.onclick = function() {
+        next_image = image_src.slice(0, image_src.length - 5) + 4 + '.jpg';
+        document.getElementById("mapa").src = next_image;
+        modal.style.display = "none";
+        modal = document.getElementById("myModal" + 4);
+    }
+    btn4.onclick = function() {
+        next_image = image_src.slice(0, image_src.length - 5) + 5 + '.jpg';
+        document.getElementById("mapa").src = next_image;
+        modal.style.display = "none";
+        modal = document.getElementById("myModal" + 5);
+    }
+    btn5.onclick = function() {
+        next_image = image_src.slice(0, image_src.length - 5) + 6 + '.jpg';
+        document.getElementById("mapa").src = next_image;
+        modal.style.display = "none";
+        modal = document.getElementById("myModal" + 6);
     }
 
     // When the user clicks on <span> (x), close the modal
