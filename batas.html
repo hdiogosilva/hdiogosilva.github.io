@@ -598,7 +598,7 @@
     image_src_number = parseInt((image_src.slice(image_src.length - 5))[0])
 
     // Get the modal
-    var modal = document.getElementById("myModal" + image_src_number);
+    let modal = document.getElementById("myModal" + image_src_number);
 
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
@@ -617,6 +617,7 @@
         next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
         document.getElementById("mapa").src = next_image
         modal.style.display = "none";
+        modal = document.getElementById("myModal" + (image_src_number + 1));
     }
 
     // When the user clicks on <span> (x), close the modal
