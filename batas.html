@@ -17,23 +17,23 @@
     h6 {
         font-family: "Montserrat", sans-serif
     }
-
+    
     .w3-row-padding img {
         margin-bottom: 12px
     }
     /* Set the width of the sidebar to 120px */
-
+    
     .w3-sidebar {
         width: 120px;
         background: #222;
     }
     /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-
+    
     #main {
         margin-left: 120px
     }
     /* Remove margins from "page content" on small screens */
-
+    
     @media only screen and (max-width: 600px) {
         #main {
             margin-left: 0
@@ -86,30 +86,30 @@
                 h6 {
                     font-family: "Montserrat", sans-serif
                 }
-
+                
                 .w3-row-padding img {
                     margin-bottom: 12px
                 }
                 /* Set the width of the sidebar to 120px */
-
+                
                 .w3-sidebar {
                     width: 120px;
                     background: #222;
                 }
                 /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-
+                
                 #main {
                     margin-left: 120px
                 }
                 /* Remove margins from "page content" on small screens */
-
+                
                 @media only screen and (max-width: 600px) {
                     #main {
                         margin-left: 0
                     }
                 }
                 /* The Modal (background) */
-
+                
                 .modal {
                     display: none;
                     /* Hidden by default */
@@ -131,7 +131,7 @@
                     /* Black w/ opacity */
                 }
                 /* Modal Content/Box */
-
+                
                 .modal-content {
                     background-color: #fefefe;
                     margin: 15% auto;
@@ -142,14 +142,14 @@
                     /* Could be more or less, depending on screen size */
                 }
                 /* The Close Button */
-
+                
                 .close {
                     color: #aaa;
                     float: right;
                     font-size: 28px;
                     font-weight: bold;
                 }
-
+                
                 .close:hover,
                 .close:focus {
                     color: black;
@@ -603,7 +603,7 @@
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
 
-    var btn2 = document.getElementById("myBtn2");
+    var btn2 = document.getElementById("myBtn" + image_src_number + 1);
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -634,15 +634,13 @@
         }
     }
 
-    function runtimer(){
-      window.setTimeout(function(){
-        console.log("deu run");
-        
-        runtimer();
-      }, 2000)
+    function runtimer() {
+        window.setTimeout(function() {
+            console.log("deu run");
+
+            runtimer();
+        }, 2000)
     }
-
-
 </script>
 
 </html>
