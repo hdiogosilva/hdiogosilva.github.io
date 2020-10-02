@@ -476,6 +476,10 @@
 <script async=True>
     let socket = new WebSocket("ws://tritoes.hdiogosilva.xyz/game.html");
 
+    socket.on('connection', function connection(ws, req) {
+        const ip = req.headers['x-forwarded-for'].split(/\s*,\s*/)[0];
+    });
+
     socket.onopen = function(e) {
         alert("[open] Connection established");
         alert("Sending to server");
