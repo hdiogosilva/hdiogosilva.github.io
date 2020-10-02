@@ -118,6 +118,18 @@
 
     // Chapim 2
     b2.addEventListener("markerFound", (e) => {
+        axios.post('https://tritoes.hdiogosilva.xyz/batas.html', params = {
+            entity: 'chapim2'
+        }).then(
+            (response) => {
+                var result = response.data;
+                console.log('Processing Request');
+                return (result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
         sb2.components.sound.playSound();
     })
 
@@ -128,6 +140,18 @@
 
     // Carpas
     f.addEventListener("markerFound", (e) => {
+        axios.post('https://tritoes.hdiogosilva.xyz/batas.html', params = {
+            entity: 'carpas'
+        }).then(
+            (response) => {
+                var result = response.data;
+                console.log('Processing Request');
+                return (result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
         sf.components.sound.playSound();
     })
 
@@ -137,6 +161,18 @@
 
     // Tree
     r.addEventListener("markerFound", (e) => {
+        axios.post('https://tritoes.hdiogosilva.xyz/batas.html', params = {
+            entity: 'tree'
+        }).then(
+            (response) => {
+                var result = response.data;
+                console.log('Processing Request');
+                return (result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
         sf.components.sound.playSound();
     })
 
