@@ -161,31 +161,33 @@
     </body>
     <script>
     
-    // var m = document.querySelector('#markerA')
-    // var n = document.querySelector('#markerC')
-    // var a = document.querySelector('[sound]');
+    var b = document.querySelector('#marker_bird')
+    var t = document.querySelector('#marker_tritao')
+    var m = document.querySelector('#marker_mouse')
+    var f = document.querySelector('#marker_fish')
+    var r = document.querySelector('#marker_tree')
     
-    document.querySelectorAll('.maker').forEach(item => {
-        item.addEventListener("markerFound", (e)=>{
-            var a = document.querySelector('[sound]');
-            console.log("found")
-            components.sound.playSound();
-        })
-    })
+    var a = document.querySelector('[sound]');
     
-    /*
-    m.addEventListener("markerFound", (e)=>{
-    a.components.sound.playSound();
-    
+    b.addEventListener("markerFound", (e)=>{
+        console.log("found bird")
+        a.components.sound.playSound();
     })
 
-    m.addEventListener("markerLost", (e)=>{
-    a.components.sound.stopSound();
+    b.addEventListener("markerLost", (e)=>{
+        console.log("lost bird")
+        a.components.sound.stopSound();
     })
     
-    n.addEventListener("markerFound", (e)=>{
-    
+    f.addEventListener("markerFound", (e)=>{
+        console.log("found fish")
+        a.components.sound.playSound();
     })
-    */
+
+    f.addEventListener("markerLost", (e)=>{
+        console.log("lost fish")
+        a.components.sound.stopSound();
+    })
+    
     </script>
 </html>
