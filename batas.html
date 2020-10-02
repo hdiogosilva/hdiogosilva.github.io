@@ -487,11 +487,13 @@
         } catch (err) {
             // catches errors both in fetch and response.json
             console.log(err);
+        } finally {
+            // do it again in 2 seconds
+            setTimeout(getMachineAction, 2000);
         }
     }
 
-    response = makeGetRequest();
-    console.log(response)
+    makeGetRequest()
 </script>
 
 </html>
