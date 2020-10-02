@@ -603,6 +603,7 @@
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
 
+    // Get the button that answers the question
     let btn2 = document.getElementById("myBtn2");
 
     // Get the <span> element that closes the modal
@@ -621,6 +622,7 @@
 
         console.log(image_src_number)
         btn2 = document.getElementById("myBtn" + (image_src_number + 2));
+        console.log(btn2)
         modal = document.getElementById("myModal" + (image_src_number + 1));
     }
 
