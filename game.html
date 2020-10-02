@@ -33,6 +33,7 @@
             <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
             <audio id="aud_tree" src="assets/audio/aud_tree.mp3" preload="auto"></audio>
             <audio id="aud_rato" src="assets/audio/Ratinho.mp3" preload="auto"></audio>
+            <audio id="aud_trit" src="assets/audio/tritao.mp3" preload="auto"></audio>
         </a-assets>
 
         <!-- Marker: Passaro1     Modelo: Passaro-->
@@ -51,7 +52,7 @@
 
         <!-- Marker: logo     Modelo: Tritão -->
         <a-marker type="pattern" url="assets/markers_john/dimmersions_logo.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker_tritao" class="marker">
-            <a-entity id="newt-model" gltf-model="assets/models/tritao/scene.gltf" position="0 0 80" scale="0.1 0.1 0.1" rotation="-45 0 0" class="clickable" gesture-handler>
+            <a-entity id="newt-model" gltf-model="assets/models/tritao/scene.gltf" position="0 0 80" scale="0.1 0.1 0.1" rotation="-45 0 0" class="clickable" gesture-handler animation-mixer="clip: *;" sound="src: #aud_trit ;">
             </a-entity>
         </a-marker>
 
@@ -93,8 +94,10 @@
     var sf = document.querySelector('a-entity#fish-model[sound]');
     // Tree
     var st = document.querySelector('a-entity#tree-model[sound]');
-    // Tree
+    // Mouse
     var sm = document.querySelector('a-entity#mouse-model[sound]');
+    // Tritao
+    var sm = document.querySelector('a-entity#newt-model[sound]');
 
 
     // Chapim 1
@@ -202,6 +205,28 @@
     m.addEventListener("markerLost", (e) => {
         // a.components.sound.stopSound();
     })
+    
+    // Tritão
+    t.addEventListener("markerFound", (e) => {
+        axios.post('https://tritoes.hdiogosilva.xyz/batas.html', params = {
+            entity: 'tritao'
+        }).then(
+            (response) => {
+                var result = response.data;
+                console.log('Processing Request');
+                return (result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+        st.components.sound.playSound();
+    })
+
+    t.addEventListener("markerLost", (e) => {
+        // a.components.sound.stopSound();
+    })
+    
 </script>
 
 </html>
