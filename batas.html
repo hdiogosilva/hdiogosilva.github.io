@@ -597,6 +597,8 @@
     image_src = document.getElementById("mapa").src
     image_src_number = parseInt((image_src.slice(image_src.length - 5))[0])
 
+    var flag = false;
+
     // Get the modal
     var modal = document.getElementById("myModal" + image_src_number);
 
@@ -616,11 +618,17 @@
 
     btn2.onclick = function() {
         next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
-        document.getElementById("mapa").src = next_image
+        document.getElementById("mapa").src = next_image;
 
         modal.style.display = "none";
         modal = document.getElementById("myModal" + (image_src_number + 1));
+        flag = true;
+
+    }
+
+    if (flag == true) {
         btn2 = document.getElementById("myBtn" + (image_src_number + 1));
+        flag = false;
     }
 
     // When the user clicks on <span> (x), close the modal
