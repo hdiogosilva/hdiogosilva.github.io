@@ -434,7 +434,7 @@
                         <input type="radio" id="resposta4" name="resposta" value="0">
                         <label for="resposta4"> Chapim </label>
                     </div>
-                    <button id="myBtn2">Responder</button>
+                    <button id="myBtn3">Responder</button>
                 </div>
 
             </div>
@@ -463,7 +463,7 @@
                         <input type="radio" id="resposta4" name="resposta" value="0">
                         <label for="resposta2"> Lilaceae </label>
                     </div>
-                    <button id="myBtn2">Responder</button>
+                    <button id="myBtn4">Responder</button>
                 </div>
 
             </div>
@@ -491,7 +491,7 @@
                         <input type="radio" id="resposta4" name="resposta" value="0">
                         <label for="resposta4"> Do tamanho de uma roda de carro. </label>
                     </div>
-                    <button id="myBtn2">Responder</button>
+                    <button id="myBtn5">Responder</button>
                 </div>
 
             </div>
@@ -617,7 +617,8 @@
         next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
         document.getElementById("mapa").src = next_image
 
-        document.getElementById("myModal" + image_src_number).style.display = "none";
+        modal.style.display = "none";
+        btn2 = document.getElementById("myBtn2" + (image_src_number + 2));
         modal = document.getElementById("myModal" + (image_src_number + 1));
     }
 
