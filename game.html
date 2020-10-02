@@ -195,7 +195,7 @@
     // Chapim1
     var sb = document.querySelector('a-entity#bird-model[sound]');
     // Chapim2
-    var sb = document.querySelector('a-entity#bird-model2[sound]');
+    var sb2 = document.querySelector('a-entity#bird-model2[sound]');
     // Carpas
     var sf = document.querySelector('a-entity#fish-model[sound]');
     
@@ -211,7 +211,7 @@
     
     // Chapim 2
     b1.addEventListener("markerFound", (e)=>{
-        sb.components.sound.playSound();
+        sb2.components.sound.playSound();
     })
 
     b1.addEventListener("markerLost", (e)=>{
