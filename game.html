@@ -168,6 +168,7 @@
     document.querySelectorAll('.maker').forEach(item => {
         item.addEventListener("markerFound", (e)=>{
             var a = document.querySelector('[sound]');
+            console.log("found" + item)
             components.sound.playSound();
         })
     })
