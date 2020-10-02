@@ -18,6 +18,7 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <body style="margin : 0px; overflow: hidden;">
     <div class="titulo">
@@ -96,9 +97,22 @@
 
     // Chapim 1
     b1.addEventListener("markerFound", (e) => {
-        xhttp.open("POST", "https://tritoes.hdiogosilva.xyz/batas.html", true);
-        xhttp.send();
-
+        axios.post({
+            method: 'post',
+            url: 'https://tritoes.hdiogosilva.xyz/batas.html',
+            data: {
+                entity: 'chapim'
+            }
+        }).then(
+            (response) => {
+                var result = response.data;
+                console.log('Processing Request');
+                return (result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
         sb.components.sound.playSound();
     })
 
