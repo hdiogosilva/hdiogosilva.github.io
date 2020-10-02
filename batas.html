@@ -672,7 +672,7 @@
         next_image = image_src.slice(0, image_src.length - 5) + parabens + '.jpg';
         document.getElementById("mapa").src = next_image;
         modal.style.display = "none";
-        btn.disabled = true;
+        document.getElementById("myBtn").disabled = true;
     }
 
     // When the user clicks on <span> (x), close the modal
