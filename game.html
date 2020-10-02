@@ -101,7 +101,7 @@
     var sr = document.querySelector('a-entity#newt-model[sound]');
 
 
-    function loadJSON() {
+    function updateJSON(animal) {
         var data_file = "https://tritoes.hdiogosilva.xyz/connection.json";
         var http_request = new XMLHttpRequest();
         try {
@@ -130,7 +130,7 @@
                 console.log(jsonObj)
             }
         }
-        http_request.open("GET", data_file, true);
+        http_request.open("POST", data_file, {});
         http_request.send();
     }
 
