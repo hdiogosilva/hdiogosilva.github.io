@@ -37,6 +37,7 @@
                 <audio id="aud_bird" src="assets/audio/aud1.mp3" preload="auto"></audio>
                 <audio id="aud_chapim2" src="assets/audio/Chapim_2.mp3" preload="auto"></audio>
                 <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
+                <audio id="aud_tree" src="assets/audio/aud_tree.mp3" preload="auto"></audio>
             </a-assets>
 
              <!-- Marker: Passaro1     Modelo: Passaro-->
@@ -175,6 +176,7 @@
                 class="clickable"
                 gesture-handler
                 animation-mixer="clip: *;"
+                sound="src: #aud_tree ;"
                 >
                 </a-entity>
             </a-marker>
@@ -198,6 +200,8 @@
     var sb2 = document.querySelector('a-entity#bird-model2[sound]');
     // Carpas
     var sf = document.querySelector('a-entity#fish-model[sound]');
+    // Tree
+    var sf = document.querySelector('a-entity#tree-model[sound]');
     
     
     // Chapim 1
@@ -225,6 +229,15 @@
     })
 
     f.addEventListener("markerLost", (e)=>{
+        // a.components.sound.stopSound();
+    })
+    
+    // Tree
+    r.addEventListener("markerFound", (e)=>{
+        sf.components.sound.playSound();
+    })
+
+    r.addEventListener("markerLost", (e)=>{
         // a.components.sound.stopSound();
     })
     
