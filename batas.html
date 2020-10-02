@@ -480,6 +480,7 @@
                 console.log(response.data)
                 const myJson = await response.json(); //extract JSON from the http response
                 console.log(myJson);
+                return response
             } else {
                 console.log("not a 200");
             }
@@ -489,12 +490,8 @@
         }
     }
 
-    function main() {
-        var response = makeGetRequest();
-        console.log(response.data);
-        console.log('Statement 2');
-    }
-    main();
+    response = makeGetRequest();
+    console.log(response)
 </script>
 
 </html>
