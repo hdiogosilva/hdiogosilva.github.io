@@ -477,24 +477,23 @@
         try {
             const response = await fetch('https://tritoes.hdiogosilva.xyz/game.html')
             if (response.status === 200) {
-                console.log("Machine successfully found.");
+                console.log(response.data)
                 const myJson = await response.json(); //extract JSON from the http response
                 console.log(myJson);
+                return response
             } else {
                 console.log("not a 200");
             }
         } catch (err) {
             // catches errors both in fetch and response.json
             console.log(err);
+        } finally {
+            // do it again in 2 seconds
+            setTimeout(getMachineAction, 2000);
         }
     }
 
-    function main() {
-        var response = makeGetRequest();
-        console.log(response.data);
-        console.log('Statement 2');
-    }
-    main();
+    makeGetRequest()
 </script>
 
 </html>
