@@ -6,424 +6,492 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
-<body class="w3-black">
-
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="/assets/images/lupa.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>Mapa</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>Amigos</p>
-  </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>Pistas</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>Biblioteca</p>
-  </a>
-</nav>
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small"><!DOCTYPE html>
-<html>
-<title>À Procura do Tritão</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
-<body class="w3-black">
-
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="/assets/images/lupa.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>Mapa</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>Amigos</p>
-  </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>Pistas</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>Biblioteca</p>
-  </a>
-</nav>
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">Mapa</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">Amigos</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">Pistas</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Biblioteca</a>
-  </div>
-</div>
-
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">À </span>procura do Tritão.</h1>
-    <p>Vista do investigador de bata.</p>
-    <img src="/assets/images/lupa.jpg" alt="boy" class="w3-image" width="992" height="1108">
-  </header>
-
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">My Name</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p> O Tritão desapareceu! Com a ajuda do Investigador de Botas, serás capaz de o encontrar? 
-      Nos menus à esquerda tens várias opções para auxiliares a investigação sem  precisares de sair de casa. </p>
-    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-    <p class="w3-wide">Photography</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
-    </div>
-    <p class="w3-wide">Web Design</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-    </div>
-    <p class="w3-wide">Photoshop</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-    </div><br>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Montserrat", sans-serif
+    }
     
-    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">11+</span><br>
-        Partners
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">55+</span><br>
-        Projects Done
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">89+</span><br>
-        Happy Clients
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">150+</span><br>
-        Meetings
-      </div>
-    </div>
+    .w3-row-padding img {
+        margin-bottom: 12px
+    }
+    /* Set the width of the sidebar to 120px */
+    
+    .w3-sidebar {
+        width: 120px;
+        background: #222;
+    }
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    
+    #main {
+        margin-left: 120px
+    }
+    /* Remove margins from "page content" on small screens */
+    
+    @media only screen and (max-width: 600px) {
+        #main {
+            margin-left: 0
+        }
+    }
+</style>
 
-    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+<body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img src="/assets/images/lupa.jpg" style="width:100%">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>Mapa</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>Amigos</p>
+        </a>
+        <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>Pistas</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>Biblioteca</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <!DOCTYPE html>
+            <html>
+            <title>À Procura do Tritão</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <style>
+                body,
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    font-family: "Montserrat", sans-serif
+                }
+                
+                .w3-row-padding img {
+                    margin-bottom: 12px
+                }
+                /* Set the width of the sidebar to 120px */
+                
+                .w3-sidebar {
+                    width: 120px;
+                    background: #222;
+                }
+                /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+                
+                #main {
+                    margin-left: 120px
+                }
+                /* Remove margins from "page content" on small screens */
+                
+                @media only screen and (max-width: 600px) {
+                    #main {
+                        margin-left: 0
+                    }
+                }
+            </style>
+
+            <body class="w3-black">
+
+                <!-- Icon Bar (Sidebar - hidden on small screens) -->
+                <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+                    <!-- Avatar image in top left corner -->
+                    <img src="/assets/images/lupa.jpg" style="width:100%">
+                    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+                        <i class="fa fa-home w3-xxlarge"></i>
+                        <p>Mapa</p>
+                    </a>
+                    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                        <i class="fa fa-user w3-xxlarge"></i>
+                        <p>Amigos</p>
+                    </a>
+                    <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                        <i class="fa fa-eye w3-xxlarge"></i>
+                        <p>Pistas</p>
+                    </a>
+                    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                        <i class="fa fa-envelope w3-xxlarge"></i>
+                        <p>Biblioteca</p>
+                    </a>
+                </nav>
+
+                <!-- Navbar on small screens (Hidden on medium and large screens) -->
+                <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+                    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+                        <a href="#" class="w3-bar-item w3-button" style="width:25% !important">Mapa</a>
+                        <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">Amigos</a>
+                        <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">Pistas</a>
+                        <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Biblioteca</a>
+                    </div>
+                </div>
+
+                <!-- Page Content -->
+                <div class="w3-padding-large" id="main">
+                    <!-- Header/Home -->
+                    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+                        <h1 class="w3-jumbo"><span class="w3-hide-small">À </span>procura do Tritão.</h1>
+                        <p>Vista do investigador de bata.</p>
+                        <img src="/assets/images/lupa.jpg" alt="boy" class="w3-image" width="992" height="1108">
+                    </header>
+
+                    <!-- About Section -->
+                    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+                        <h2 class="w3-text-light-grey">My Name</h2>
+                        <hr style="width:200px" class="w3-opacity">
+                        <p> O Tritão desapareceu! Com a ajuda do Investigador de Botas, serás capaz de o encontrar? Nos menus à esquerda tens várias opções para auxiliares a investigação sem precisares de sair de casa. </p>
+                        <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+                        <p class="w3-wide">Photography</p>
+                        <div class="w3-white">
+                            <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+                        </div>
+                        <p class="w3-wide">Web Design</p>
+                        <div class="w3-white">
+                            <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+                        </div>
+                        <p class="w3-wide">Photoshop</p>
+                        <div class="w3-white">
+                            <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+                        </div><br>
+
+                        <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                            <div class="w3-quarter w3-section">
+                                <span class="w3-xlarge">11+</span><br> Partners
+                            </div>
+                            <div class="w3-quarter w3-section">
+                                <span class="w3-xlarge">55+</span><br> Projects Done
+                            </div>
+                            <div class="w3-quarter w3-section">
+                                <span class="w3-xlarge">89+</span><br> Happy Clients
+                            </div>
+                            <div class="w3-quarter w3-section">
+                                <span class="w3-xlarge">150+</span><br> Meetings
+                            </div>
+                        </div>
+
+                        <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <i class="fa fa-download"></i> Download Resume
     </button>
-    
-    <!-- Grid for pricing tables -->
-    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">5GB Storage</li>
-          <li class="w3-padding-16">Mail Support</li>
-          <li class="w3-padding-16">
-            <h2>$ 10</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
 
-      <div class="w3-half">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
-          <li class="w3-padding-16">Web Design</li>
-          <li class="w3-padding-16">Photography</li>
-          <li class="w3-padding-16">50GB Storage</li>
-          <li class="w3-padding-16">Endless Support</li>
-          <li class="w3-padding-16">
-            <h2>$ 25</h2>
-            <span class="w3-opacity">per month</span>
-          </li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-          </li>
-        </ul>
-      </div>
-    <!-- End Grid/Pricing tables -->
-    </div>
-    
-    <!-- Testimonials -->
-    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
-    <img src="/assets/images/rato.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Rato.</span> Mora perto do Rapaz de Bronze.</p>
-    <p>Amigo do Tritão Marmorado, talvez possa ajudar.</p><br>
-    
-    <img src="/assets/images/eucalipto.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
-    <p><span class="w3-large w3-margin-right">Eucalipto maior.</span> Esté próximo da lagoa maior.</p>
-    <p>Vive no Jardim há muitos anos, pode saber mais sobre o Tritão.</p>
-    
-    <img src="/assets/images/peixe.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
-    <p><span class="w3-large w3-margin-right">Peixes Dourados.</span> Vivem na fonte no Jardim da Roseira.</p>
-    <p>Gostam tanto da água como de ovos de tritão.</p>
-  <!-- End About Section -->
-  </div>
-  
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-    <h2 class="w3-text-light-grey">My Photos</h2>
-    <hr style="width:200px" class="w3-opacity">
+                        <!-- Grid for pricing tables -->
+                        <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+                        <div class="w3-row-padding" style="margin:0 -16px">
+                            <div class="w3-half w3-margin-bottom">
+                                <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+                                    <li class="w3-padding-16">Web Design</li>
+                                    <li class="w3-padding-16">Photography</li>
+                                    <li class="w3-padding-16">5GB Storage</li>
+                                    <li class="w3-padding-16">Mail Support</li>
+                                    <li class="w3-padding-16">
+                                        <h2>$ 10</h2>
+                                        <span class="w3-opacity">per month</span>
+                                    </li>
+                                    <li class="w3-light-grey w3-padding-24">
+                                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+                                    </li>
+                                </ul>
+                            </div>
 
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/rocks.jpg" style="width:100%">
-        <img src="/w3images/sailboat.jpg" style="width:100%">
-      </div>
+                            <div class="w3-half">
+                                <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+                                    <li class="w3-padding-16">Web Design</li>
+                                    <li class="w3-padding-16">Photography</li>
+                                    <li class="w3-padding-16">50GB Storage</li>
+                                    <li class="w3-padding-16">Endless Support</li>
+                                    <li class="w3-padding-16">
+                                        <h2>$ 25</h2>
+                                        <span class="w3-opacity">per month</span>
+                                    </li>
+                                    <li class="w3-light-grey w3-padding-24">
+                                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Grid/Pricing tables -->
+                        </div>
 
-      <div class="w3-half">
-        <img src="/w3images/underwater.jpg" style="width:100%">
-        <img src="/w3images/chef.jpg" style="width:100%">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/p6.jpg" style="width:100%">
-      </div>
-    <!-- End photo grid -->
-    </div>
-  <!-- End Portfolio Section -->
-  </div>
+                        <!-- Testimonials -->
+                        <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>
+                        <img src="/assets/images/rato.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                        <p><span class="w3-large w3-margin-right">Rato.</span> Mora perto do Rapaz de Bronze.</p>
+                        <p>Amigo do Tritão Marmorado, talvez possa ajudar.</p><br>
 
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Ficha do Tritão</h2>
-    <hr style="width:200px" class="w3-opacity">
+                        <img src="/assets/images/eucalipto.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
+                        <p><span class="w3-large w3-margin-right">Eucalipto maior.</span> Esté próximo da lagoa maior.</p>
+                        <p>Vive no Jardim há muitos anos, pode saber mais sobre o Tritão.</p>
 
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Origem </p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Telefone: +00 151515</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: tritao.marmorado@mail.com</p>
-    </div><br>
-    <p>Adicionar informação:</p>
+                        <img src="/assets/images/peixe.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
+                        <p><span class="w3-large w3-margin-right">Peixes Dourados.</span> Vivem na fonte no Jardim da Roseira.</p>
+                        <p>Gostam tanto da água como de ovos de tritão.</p>
+                        <!-- End About Section -->
+                    </div>
 
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Tamanho" required name="Tamanho"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Longevidade" required name="Longevidade"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Estado de conservação" required name="Estado de conservação"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Cor" required name="Cor"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Horário de maior atividade" required name="Horário de maior atividade"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Dieta" required name="Dieta"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                    <!-- Portfolio Section -->
+                    <div class="w3-padding-64 w3-content" id="photos">
+                        <h2 class="w3-text-light-grey">My Photos</h2>
+                        <hr style="width:200px" class="w3-opacity">
+
+                        <!-- Grid for photos -->
+                        <div class="w3-row-padding" style="margin:0 -16px">
+                            <div class="w3-half">
+                                <img src="/w3images/wedding.jpg" style="width:100%">
+                                <img src="/w3images/rocks.jpg" style="width:100%">
+                                <img src="/w3images/sailboat.jpg" style="width:100%">
+                            </div>
+
+                            <div class="w3-half">
+                                <img src="/w3images/underwater.jpg" style="width:100%">
+                                <img src="/w3images/chef.jpg" style="width:100%">
+                                <img src="/w3images/wedding.jpg" style="width:100%">
+                                <img src="/w3images/p6.jpg" style="width:100%">
+                            </div>
+                            <!-- End photo grid -->
+                        </div>
+                        <!-- End Portfolio Section -->
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                        <h2 class="w3-text-light-grey">Ficha do Tritão</h2>
+                        <hr style="width:200px" class="w3-opacity">
+
+                        <div class="w3-section">
+                            <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Origem </p>
+                            <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Telefone: +00 151515</p>
+                            <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: tritao.marmorado@mail.com</p>
+                        </div><br>
+                        <p>Adicionar informação:</p>
+
+                        <form action="/action_page.php" target="_blank">
+                            <p><input class="w3-input w3-padding-16" type="text" placeholder="Tamanho" required name="Tamanho"></p>
+                            <p><input class="w3-input w3-padding-16" type="text" placeholder="Longevidade" required name="Longevidade"></p>
+                            <p><input class="w3-input w3-padding-16" type="text" placeholder="Estado de conservação" required name="Estado de conservação"></p>
+                            <p><input class="w3-input w3-padding-16" type="text" placeholder="Cor" required name="Cor"></p>
+                            <p><input class="w3-input w3-padding-16" type="text" placeholder="Horário de maior atividade" required name="Horário de maior atividade"></p>
+                            <p><input class="w3-input w3-padding-16" type="text" placeholder="Dieta" required name="Dieta"></p>
+                            <p>
+                                <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> Submeter informação
         </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
-  
-    <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
-  </footer>
+                            </p>
+                        </form>
+                        <!-- End Contact Section -->
+                    </div>
 
-<!-- END PAGE CONTENT -->
-</div>
+                    <!-- Footer -->
+                    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+                        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                        <i class="fa fa-instagram w3-hover-opacity"></i>
+                        <i class="fa fa-snapchat w3-hover-opacity"></i>
+                        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                        <i class="fa fa-twitter w3-hover-opacity"></i>
+                        <i class="fa fa-linkedin w3-hover-opacity"></i>
+                        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+                        <!-- End footer -->
+                    </footer>
 
-</body>
-</html>
+                    <!-- END PAGE CONTENT -->
+                </div>
 
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-  </div>
-</div>
+            </body>
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <img src="/assets/images/interface_bata000.jpg" alt="boy" class="w3-image" width="992" height="1108">
-    <!---<img src="/assets/images/interface_bata_pistas.jpg" alt="boy" class="w3-image" width="992" height="1108">>
+            </html>
+
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <img src="/assets/images/interface_bata000.jpg" alt="boy" class="w3-image" width="992" height="1108">
+            <!---<img src="/assets/images/interface_bata_pistas.jpg" alt="boy" class="w3-image" width="992" height="1108">>
     <!---<img src="/assets/images/interface_bata_parabens.jpg" alt="boy" class="w3-image" width="992" height="1108">>
   </header>
 
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">Objetivo</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>Conseguirás descobrir o responsável pelo desaparecimento do Tritão?    </p>
-    <h3 class="w3-padding-16 w3-text-light-grey">Progresso</h3>
-    <p class="w3-wide">Rato</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:0%"></div>
-    </div>
-    <p class="w3-wide">Peixes Dourados</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:0%"></div>
-    </div>
-    <p class="w3-wide">Eucalipto</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:0%"></div>
-    </div><br>
-    
-    <!-- Grid for pricing tables -->
-    <h3 class="w3-padding-16 w3-text-light-grey">Biblioteca</h3>
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Fauna do Jardim</li>
-          <li class="w3-padding-16">Mamíferos</li>
-          <li class="w3-padding-16">Anfíbios</li>
-          <li class="w3-padding-16">Peixes</li>
-          <li class="w3-padding-16">Aves</li>
-          <li class="w3-padding-16">Répteis</li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Mais informação</button>
-          </li>
-        </ul>
-      </div>
+            <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+                <h2 class="w3-text-light-grey">Objetivo</h2>
+                <hr style="width:200px" class="w3-opacity">
+                <p>Conseguirás descobrir o responsável pelo desaparecimento do Tritão? </p>
+                <h3 class="w3-padding-16 w3-text-light-grey">Progresso</h3>
+                <p class="w3-wide">Rato</p>
+                <div class="w3-white">
+                    <div class="w3-dark-grey" style="height:28px;width:0%"></div>
+                </div>
+                <p class="w3-wide">Peixes Dourados</p>
+                <div class="w3-white">
+                    <div class="w3-dark-grey" style="height:28px;width:0%"></div>
+                </div>
+                <p class="w3-wide">Eucalipto</p>
+                <div class="w3-white">
+                    <div class="w3-dark-grey" style="height:28px;width:0%"></div>
+                </div><br>
 
-      <div class="w3-half">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Flora do Jardim</li>
-          <li class="w3-padding-16">Árvores</li>
-          <li class="w3-padding-16">Flores</li>
-          <li class="w3-padding-16">Arbustos</li>
-          <li class="w3-padding-16">Plantas Aquáticas</li>
-          <li class="w3-light-grey w3-padding-24">
-            <button class="w3-button w3-white w3-padding-large w3-hover-black">Mais Informação</button>
-          </li>
-        </ul>
-      </div>
-    <!-- End Grid/Pricing tables -->
-    </div>
-    
-    <!-- Testimonials -->    
-    <h3 class="w3-padding-24 w3-text-light-grey">Amigos do Tritão</h3>  
-    
-    <img src="/assets/images/rato.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">Rato.</span> Mora perto do Rapaz de Bronze.</p>
-    <p>Amigo do Tritão Marmorado, talvez possa ajudar.</p><br>
-    
-    <img src="/assets/images/eucalipto.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
-    <p><span class="w3-large w3-margin-right">Eucalipto Maior.</span> Está próximo da lagoa maior.</p>
-    <p>Vive no Jardim há muitos anos, poderá saber mais sobre o Tritão.</p>
-    
-    <img src="/assets/images/peixe.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
-    <p><span class="w3-large w3-margin-right">Peixes Dourados.</span> Vivem na fonte no Jardim da Roseira.</p>
-    <p>Gostam tanto da água como de ovos de tritão.</p>
+                <!-- Grid for pricing tables -->
+                <h3 class="w3-padding-16 w3-text-light-grey">Biblioteca</h3>
+                <div class="w3-row-padding" style="margin:0 -16px">
+                    <div class="w3-half w3-margin-bottom">
+                        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                            <li class="w3-dark-grey w3-xlarge w3-padding-32">Fauna do Jardim</li>
+                            <li class="w3-padding-16">Mamíferos</li>
+                            <li class="w3-padding-16">Anfíbios</li>
+                            <li class="w3-padding-16">Peixes</li>
+                            <li class="w3-padding-16">Aves</li>
+                            <li class="w3-padding-16">Répteis</li>
+                            <li class="w3-light-grey w3-padding-24">
+                                <button class="w3-button w3-white w3-padding-large w3-hover-black">Mais informação</button>
+                            </li>
+                        </ul>
+                    </div>
 
-    
-  <!-- End About Section -->
-  </div>
-  
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-    <h2 class="w3-text-light-grey">Galeria de imagens</h2>
-    <hr style="width:200px" class="w3-opacity">
+                    <div class="w3-half">
+                        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+                            <li class="w3-dark-grey w3-xlarge w3-padding-32">Flora do Jardim</li>
+                            <li class="w3-padding-16">Árvores</li>
+                            <li class="w3-padding-16">Flores</li>
+                            <li class="w3-padding-16">Arbustos</li>
+                            <li class="w3-padding-16">Plantas Aquáticas</li>
+                            <li class="w3-light-grey w3-padding-24">
+                                <button class="w3-button w3-white w3-padding-large w3-hover-black">Mais Informação</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Grid/Pricing tables -->
+                </div>
 
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="/assets/images/20200930_121209_HDR.jpg" style="width:100%">
-        <img src="/assets/images/20200930_123112_HDR.jpg" style="width:100%">
-        <img src="/assets/images/20200930_123235_HDR.jpg" style="width:100%">
-      </div>
+                <!-- Testimonials -->
+                <h3 class="w3-padding-24 w3-text-light-grey">Amigos do Tritão</h3>
 
-      <div class="w3-half">
-        <img src="/assets/images/20200930_123301_HDR.jpg" style="width:100%">
-        <img src="/assets/images/20200930_123433_HDR.jpg" style="width:100%">
-        <img src="/assets/images/20200930_123605_HDR.jpg" style="width:100%">
-        <img src="/assets/images/cromo_final.jpg" style="width:100%">
-        <img src="/assets/images/passaporte.jpg" style="width:100%">
-      </div>
-    <!-- End photo grid -->
-    </div>
-  <!-- End Portfolio Section -->
-  </div>
+                <img src="/assets/images/rato.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                <p><span class="w3-large w3-margin-right">Rato.</span> Mora perto do Rapaz de Bronze.</p>
+                <p>Amigo do Tritão Marmorado, talvez possa ajudar.</p><br>
 
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Ficha do Tritão</h2>
-    <hr style="width:200px" class="w3-opacity">
+                <img src="/assets/images/eucalipto.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
+                <p><span class="w3-large w3-margin-right">Eucalipto Maior.</span> Está próximo da lagoa maior.</p>
+                <p>Vive no Jardim há muitos anos, poderá saber mais sobre o Tritão.</p>
 
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Origem </p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Telefone: +00 151515</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: tritao.marmorado@mail.com</p>
-    </div><br>
-    <p>Adicionar informação:</p>
+                <img src="/assets/images/peixe.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;height:80px">
+                <p><span class="w3-large w3-margin-right">Peixes Dourados.</span> Vivem na fonte no Jardim da Roseira.</p>
+                <p>Gostam tanto da água como de ovos de tritão.</p>
 
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Tamanho" required name="Tamanho"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Longevidade" required name="Longevidade"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Estado de conservação" required name="Estado de conservação"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Cor" required name="Cor"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Horário de maior atividade" required name="Horário de maior atividade"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Dieta" required name="Dieta"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+
+                <!-- End About Section -->
+            </div>
+
+            <!-- Portfolio Section -->
+            <div class="w3-padding-64 w3-content" id="photos">
+                <h2 class="w3-text-light-grey">Galeria de imagens</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <!-- Grid for photos -->
+                <div class="w3-row-padding" style="margin:0 -16px">
+                    <div class="w3-half">
+                        <img src="/assets/images/20200930_121209_HDR.jpg" style="width:100%">
+                        <img src="/assets/images/20200930_123112_HDR.jpg" style="width:100%">
+                        <img src="/assets/images/20200930_123235_HDR.jpg" style="width:100%">
+                    </div>
+
+                    <div class="w3-half">
+                        <img src="/assets/images/20200930_123301_HDR.jpg" style="width:100%">
+                        <img src="/assets/images/20200930_123433_HDR.jpg" style="width:100%">
+                        <img src="/assets/images/20200930_123605_HDR.jpg" style="width:100%">
+                        <img src="/assets/images/cromo_final.jpg" style="width:100%">
+                        <img src="/assets/images/passaporte.jpg" style="width:100%">
+                    </div>
+                    <!-- End photo grid -->
+                </div>
+                <!-- End Portfolio Section -->
+            </div>
+
+            <!-- Contact Section -->
+            <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                <h2 class="w3-text-light-grey">Ficha do Tritão</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <div class="w3-section">
+                    <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Origem </p>
+                    <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Telefone: +00 151515</p>
+                    <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: tritao.marmorado@mail.com</p>
+                </div><br>
+                <p>Adicionar informação:</p>
+
+                <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Tamanho" required name="Tamanho"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Longevidade" required name="Longevidade"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Estado de conservação" required name="Estado de conservação"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Cor" required name="Cor"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Horário de maior atividade" required name="Horário de maior atividade"></p>
+                    <p><input class="w3-input w3-padding-16" type="text" placeholder="Dieta" required name="Dieta"></p>
+                    <p>
+                        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
           <i class="fa fa-paper-plane"></i> Submeter informação
         </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-   </div>
-  
-    <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
-  </footer>
+                    </p>
+                </form>
+                <!-- End Contact Section -->
+            </div>
 
-<!-- END PAGE CONTENT -->
-</div>
+            <!-- Footer -->
+            <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+                <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+                <!-- End footer -->
+            </footer>
+
+            <!-- END PAGE CONTENT -->
+    </div>
 
 </body>
+<script>
+    function makeGetRequest(path) {
+        axios.get(path).then(
+            (response) => {
+                var result = response.data;
+                console.log('Processing Request');
+                return (result);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    }
+
+    function main() {
+        var response = makeGetRequest('https://tritoes.hdiogosilva.xyz/game.html');
+        console.log(response);
+        console.log('Statement 2');
+    }
+    main();
+</script>
+
 </html>

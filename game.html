@@ -1,199 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <style>
-    .titulo{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+<style>
+    .titulo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
     }
-    
-    </style>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <body style="margin : 0px; overflow: hidden;">
-        <div class="titulo">
-            <h1>À Procura do Tritão</h1>
-        </div>
-        
-        <a-scene
-            arjs
-            embedded
-            renderer="logarithmicDepthBuffer: true;"
-            vr-mode-ui="enabled: false"
-            gesture-detector
-            id="scene"
-            >
-            <a-assets>
-                <a-entity cursor position="0 0 -5"></a-entity>
-                <audio id="aud_bird" src="assets/audio/aud1.mp3" preload="auto"></audio>
-                <audio id="aud_chapim2" src="assets/audio/Chapim_2.mp3" preload="auto"></audio>
-                <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
-                <audio id="aud_tree" src="assets/audio/aud_tree.mp3" preload="auto"></audio>
-            </a-assets>
+</style>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
-             <!-- Marker: Passaro1     Modelo: Passaro-->
-             
-             <a-marker
-                type="pattern"
-                url="assets/markers/pattern-chapim.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="marker_bird"
-                class="marker"
-            >
-                <a-entity
-                id="bird-model"
-                gltf-model="assets/models/bird/scene.gltf"
-                position="0 0 0"
-                scale="15 15 15"
-                rotation="-45 0 0"
-                class="clickable"
-                gesture-handler
-                animation-mixer="clip: hover;"
-                sound="src: #aud_bird ;"
-                >
-                </a-entity>
-            </a-marker>
-            
-            <!-- Marker: Hiro     Modelo: Passaro-->
-             
-             <a-marker preset="hiro"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="marker_bird2"
-                class="marker"
-            >
-                <a-entity
-                id="bird-model2"
-                gltf-model="assets/models/bird/scene.gltf"
-                position="0 0 0"
-                scale="15 15 15"
-                rotation="-45 0 0"
-                class="clickable"
-                gesture-handler
-                animation-mixer="clip: hover;"
-                sound="src: #aud_chapim2 ;"
-                >
-                </a-entity>
-            </a-marker>
+<body style="margin : 0px; overflow: hidden;">
+    <div class="titulo">
+        <h1>À Procura do Tritão</h1>
+    </div>
 
-            
-            <!-- Marker: logo     Modelo: Tritão-->
-            <a-marker
-                type="pattern"
-                url="assets/markers_john/dimmersions_logo.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="marker_tritao"
-                class="marker"
-            >
-                <a-entity
-                id="newt-model"
-                gltf-model="assets/models/tritao/scene.gltf"
-                position="0 0 0"
-                scale="0.01 0.01 0.01"
-                rotation="-45 0 0"
-                class="clickable"
-                gesture-handler
-                animation-mixer="clip: hover;"
-                sound="src: #aud_bird ;"
-                >
-                </a-entity>
-            </a-marker>
-            
-             <!-- Marker: Humano     Modelo: Rato-->
-             <a-marker
-                type="pattern"
-                url="assets/markers_john/pattern-dog.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                id="marker_mouse"
-                class="marker"
-            >
-            <a-entity
-                id="mouse-model"
-                gltf-model="assets/models/mouse/scene.gltf"
-                position="0 0 0"
-                scale="0.6 0.6 0.6"
-                rotation="-85 0 0"
-                class="clickable"
-                gesture-handler
-                animation-mixer="clip: *;"
-                >
-                </a-entity>
-            </a-marker>
-            
-            <!-- Marker: Pato Modelo: Peixe -->
-            <a-marker
-                type="pattern"
-                url="assets/markers_john/pato.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                id="marker_fish"
-                class="marker"
-            >
-            <a-entity
-                id="fish-model"
-                gltf-model="assets/models/fish/scene.gltf"
-                position="0 0 0"
-                scale="0.001 0.001 0.001"
-                rotation="-85 0 0"
-                class="clickable"
-                gesture-handler
-                animation-mixer="clip: *;"
-                sound="src: #aud_carpas ;"
-                >
-                </a-entity>
-            </a-marker>
-            
-            <!-- Marker: Cao Modelo: Arvore -->
-            <a-marker
-                type="pattern"
-                url="assets/markers_john/pattern-dog.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                id="marker_tree"
-                class="marker"
-            >
-            <a-entity
-                id="tree-model"
-                gltf-model="assets/models/tree/scene.gltf"
-                position="0 0 0"
-                scale="0.3 0.3 0.3"
-                rotation="-85 0 0"
-                class="clickable"
-                gesture-handler
-                animation-mixer="clip: *;"
-                sound="src: #aud_tree ;"
-                >
-                </a-entity>
-            </a-marker>
-            
-            <a-entity camera></a-entity>
-        </a-scene>
-        
-    </body>
-    <script>
-    
+    <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
+        <a-assets>
+            <a-entity cursor position="0 0 -5"></a-entity>
+            <audio id="aud_bird" src="assets/audio/aud1.mp3" preload="auto"></audio>
+            <audio id="aud_chapim2" src="assets/audio/Chapim_2.mp3" preload="auto"></audio>
+            <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
+            <audio id="aud_tree" src="assets/audio/aud_tree.mp3" preload="auto"></audio>
+        </a-assets>
+
+        <!-- Marker: Passaro1     Modelo: Passaro-->
+
+        <a-marker type="pattern" url="assets/markers/pattern-chapim.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker_bird" class="marker">
+            <a-entity id="bird-model" gltf-model="assets/models/bird/scene.gltf" position="0 0 0" scale="15 15 15" rotation="-45 0 0" class="clickable" gesture-handler animation-mixer="clip: hover;" sound="src: #aud_bird ;">
+            </a-entity>
+        </a-marker>
+
+        <!-- Marker: Hiro     Modelo: Passaro-->
+
+        <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker_bird2" class="marker">
+            <a-entity id="bird-model2" gltf-model="assets/models/bird/scene.gltf" position="0 0 0" scale="15 15 15" rotation="-45 0 0" class="clickable" gesture-handler animation-mixer="clip: hover;" sound="src: #aud_chapim2 ;">
+            </a-entity>
+        </a-marker>
+
+
+        <!-- Marker: logo     Modelo: Tritão-->
+        <a-marker type="pattern" url="assets/markers_john/dimmersions_logo.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="marker_tritao" class="marker">
+            <a-entity id="newt-model" gltf-model="assets/models/tritao/scene.gltf" position="0 0 0" scale="0.01 0.01 0.01" rotation="-45 0 0" class="clickable" gesture-handler animation-mixer="clip: hover;" sound="src: #aud_bird ;">
+            </a-entity>
+        </a-marker>
+
+        <!-- Marker: Humano     Modelo: Rato-->
+        <a-marker type="pattern" url="assets/markers_john/pattern-dog.patt" raycaster="objects: .clickable" emitevents="true" id="marker_mouse" class="marker">
+            <a-entity id="mouse-model" gltf-model="assets/models/mouse/scene.gltf" position="0 0 0" scale="0.6 0.6 0.6" rotation="-85 0 0" class="clickable" gesture-handler animation-mixer="clip: *;">
+            </a-entity>
+        </a-marker>
+
+        <!-- Marker: Pato Modelo: Peixe -->
+        <a-marker type="pattern" url="assets/markers_john/pato.patt" raycaster="objects: .clickable" emitevents="true" id="marker_fish" class="marker">
+            <a-entity id="fish-model" gltf-model="assets/models/fish/scene.gltf" position="0 0 0" scale="0.001 0.001 0.001" rotation="-85 0 0" class="clickable" gesture-handler animation-mixer="clip: *;" sound="src: #aud_carpas ;">
+            </a-entity>
+        </a-marker>
+
+        <!-- Marker: Cao Modelo: Arvore -->
+        <a-marker type="pattern" url="assets/markers_john/pattern-dog.patt" raycaster="objects: .clickable" emitevents="true" id="marker_tree" class="marker">
+            <a-entity id="tree-model" gltf-model="assets/models/tree/scene.gltf" position="0 0 0" scale="0.3 0.3 0.3" rotation="-85 0 0" class="clickable" gesture-handler animation-mixer="clip: *;" sound="src: #aud_tree ;">
+            </a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+</body>
+<script>
     var b1 = document.querySelector('#marker_bird')
     var b2 = document.querySelector('#marker_bird2')
     var t = document.querySelector('#marker_tritao')
     var m = document.querySelector('#marker_mouse')
     var f = document.querySelector('#marker_fish')
     var r = document.querySelector('#marker_tree')
-    
+
     // Chapim1
     var sb = document.querySelector('a-entity#bird-model[sound]');
     // Chapim2
@@ -202,44 +92,47 @@
     var sf = document.querySelector('a-entity#fish-model[sound]');
     // Tree
     var sf = document.querySelector('a-entity#tree-model[sound]');
-    
-    
+
+
     // Chapim 1
-    b1.addEventListener("markerFound", (e)=>{
+    b1.addEventListener("markerFound", (e) => {
+        xhttp.open("POST", "https://tritoes.hdiogosilva.xyz/batas.html", true);
+        xhttp.send();
+
         sb.components.sound.playSound();
     })
 
-    b1.addEventListener("markerLost", (e)=>{
+    b1.addEventListener("markerLost", (e) => {
         // a.components.sound.stopSound();
     })
-    
+
     // Chapim 2
-    b2.addEventListener("markerFound", (e)=>{
+    b2.addEventListener("markerFound", (e) => {
         sb2.components.sound.playSound();
     })
 
-    b2.addEventListener("markerLost", (e)=>{
+    b2.addEventListener("markerLost", (e) => {
         // a.components.sound.stopSound();
     })
-    
-    
+
+
     // Carpas
-    f.addEventListener("markerFound", (e)=>{
+    f.addEventListener("markerFound", (e) => {
         sf.components.sound.playSound();
     })
 
-    f.addEventListener("markerLost", (e)=>{
+    f.addEventListener("markerLost", (e) => {
         // a.components.sound.stopSound();
     })
-    
+
     // Tree
-    r.addEventListener("markerFound", (e)=>{
+    r.addEventListener("markerFound", (e) => {
         sf.components.sound.playSound();
     })
 
-    r.addEventListener("markerLost", (e)=>{
+    r.addEventListener("markerLost", (e) => {
         // a.components.sound.stopSound();
     })
-    
-    </script>
+</script>
+
 </html>
