@@ -438,8 +438,9 @@
 </body>
 <script>
     function pergunta() {
-        image = document.getElementById("mapa")
-        console.log(image)
+        image_src = document.getElementById("mapa").src
+        image_src_number = (image_src.slice(image_src.length - 5))
+        console.log(image_src_number)
     }
 </script>
 
