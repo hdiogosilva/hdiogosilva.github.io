@@ -598,7 +598,7 @@
     image_src_number = parseInt((image_src.slice(image_src.length - 5))[0])
 
     // Get the modal
-    let modal = document.getElementById("myModal" + image_src_number);
+    var modal = document.getElementById("myModal" + image_src_number);
 
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
@@ -618,6 +618,8 @@
         document.getElementById("mapa").src = next_image
 
         modal.style.display = "none";
+
+        print(image_src_number)
         btn2 = document.getElementById("myBtn2" + (image_src_number + 2));
         modal = document.getElementById("myModal" + (image_src_number + 1));
     }
