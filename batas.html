@@ -671,8 +671,9 @@
     btn5.onclick = function() {
         next_image = image_src.slice(0, image_src.length - 5) + parabens + '.jpg';
         document.getElementById("mapa").src = next_image;
-        document.getElementById("myBtn").disabled = true;
+
         modal.style.display = "none";
+        document.getElementById("myBtn").disabled = true;
 
     }
 
