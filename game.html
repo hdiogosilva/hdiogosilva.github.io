@@ -35,6 +35,7 @@
             <a-assets>
                 <a-entity cursor position="0 0 -5"></a-entity>
                 <audio id="aud1" src="assets/audio/aud1.mp3" preload="auto"></audio>
+                <audio id="aud_carpas" src="assets/audio/aud_carpas.mp3" preload="auto"></audio>
             </a-assets>
 
              <!-- Marker: Passaro     Modelo: Passaro-->
@@ -45,7 +46,8 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                id="marker_bird"
+                class="marker"
             >
                 <a-entity
                 id="bird-model"
@@ -69,7 +71,8 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                id="marker_tritao"
+                class="marker"
             >
                 <a-entity
                 id="bird-model"
@@ -91,28 +94,8 @@
                 url="assets/markers_john/pattern-dog.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
-                id="markerB"
-            >
-            <a-entity
-                id="bird-model"
-                gltf-model="assets/models/mouse/scene.gltf"
-                position="0 0 0"
-                scale="0.6 0.6 0.6"
-                rotation="-85 0 0"
-                class="clickable"
-                gesture-handler
-                animation-mixer="clip: *;"
-                >
-                </a-entity>
-            </a-marker>
-            
-            <!-- Marker: Porco     Modelo: Rato-->
-            <a-marker
-                type="pattern"
-                url="assets/markers_john/porco.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                id="markerC"
+                id="marker_mouse"
+                class="marker"
             >
             <a-entity
                 id="bird-model"
@@ -133,7 +116,8 @@
                 url="assets/markers_john/pato.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
-                id="markerD"
+                id="marker_fish"
+                class="marker"
             >
             <a-entity
                 id="bird-model"
@@ -144,6 +128,7 @@
                 class="clickable"
                 gesture-handler
                 animation-mixer="clip: *;"
+                sound="src: #aud_carpas.mp3 ;"
                 >
                 </a-entity>
             </a-marker>
@@ -154,7 +139,8 @@
                 url="assets/markers_john/pattern-dog.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
-                id="markerD"
+                id="marker_tree"
+                class="marker"
             >
             <a-entity
                 id="bird-model"
@@ -175,22 +161,20 @@
     </body>
     <script>
     
-    var m = document.querySelector('#markerA')
-    var n = document.querySelector('#markerC')
-    var a = document.querySelector('[sound]');
+    // var m = document.querySelector('#markerA')
+    // var n = document.querySelector('#markerC')
+    // var a = document.querySelector('[sound]');
     
+    document.querySelectorAll('.maker').forEach(item => {
+        item.addEventListener("markerFound", (e)=>{
+            var a = document.querySelector('[sound]');
+            components.sound.playSound();
+        })
+    })
+    
+    /*
     m.addEventListener("markerFound", (e)=>{
     a.components.sound.playSound();
-    
-    var perg1 = prompt("Estás na Galeria da ...", "");
-
-    if (perg1 != "Biodiversidade") {
-    txt = "Hmmm... Acho que não é essa a resposta certa...";
-    } else {
-    txt = "Exatamente!";
-    }
-    
-    window.alert(txt);
     
     })
 
@@ -199,8 +183,8 @@
     })
     
     n.addEventListener("markerFound", (e)=>{
-    console.log("found")
-    })
     
+    })
+    */
     </script>
 </html>
