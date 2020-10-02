@@ -604,7 +604,7 @@
     var btn = document.getElementById("myBtn");
 
     // Get the button that answers the question
-    let btn2 = document.getElementById("myBtn2");
+    let btn2 = document.getElementById("myBtn" + image_src_number + 1);
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -619,10 +619,6 @@
         document.getElementById("mapa").src = next_image
 
         modal.style.display = "none";
-
-        console.log(image_src_number)
-        btn2 = document.getElementById("myBtn" + (image_src_number + 2));
-        console.log(btn2)
         modal = document.getElementById("myModal" + (image_src_number + 1));
     }
 
