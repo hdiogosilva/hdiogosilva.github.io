@@ -75,7 +75,7 @@
                 class="marker"
             >
                 <a-entity
-                id="bird-model"
+                id="newt-model"
                 gltf-model="assets/models/tritao/scene.gltf"
                 position="0 0 0"
                 scale="0.01 0.01 0.01"
@@ -98,7 +98,7 @@
                 class="marker"
             >
             <a-entity
-                id="bird-model"
+                id="mouse-model"
                 gltf-model="assets/models/mouse/scene.gltf"
                 position="0 0 0"
                 scale="0.6 0.6 0.6"
@@ -120,7 +120,7 @@
                 class="marker"
             >
             <a-entity
-                id="bird-model"
+                id="fish-model"
                 gltf-model="assets/models/fish/scene.gltf"
                 position="0 0 0"
                 scale="0.001 0.001 0.001"
@@ -143,7 +143,7 @@
                 class="marker"
             >
             <a-entity
-                id="bird-model"
+                id="tree-model"
                 gltf-model="assets/models/tree/scene.gltf"
                 position="0 0 0"
                 scale="0.3 0.3 0.3"
@@ -167,8 +167,10 @@
     var f = document.querySelector('#marker_fish')
     var r = document.querySelector('#marker_tree')
     
-    var sb = document.querySelector('#aud_bird');
-    var sf = document.querySelector('#aud_carpas');
+    // var sb = document.querySelector('#aud_bird');
+    var sb = document.querySelector('a-entity#bird-model[sound]');
+    // var sf = document.querySelector('#aud_carpas');
+    var sb = document.querySelector('a-entity#fish-model[sound]');
     
     b.addEventListener("markerFound", (e)=>{
         console.log("found bird")
