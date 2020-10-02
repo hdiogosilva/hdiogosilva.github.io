@@ -473,11 +473,11 @@
 
 </body>
 <script>
-    function makeGetRequest(path) {
-        axios.get(path).then(
+    const makeGetRequest = async() => {
+        const response = await axios.get('https://tritoes.hdiogosilva.xyz/game.html').then(
             (response) => {
-                var result = response.data;
-                console.log('Processing Request');
+                let result = response.data;
+                console.log(result);
                 return (result);
             },
             (error) => {
@@ -487,7 +487,7 @@
     }
 
     function main() {
-        var response = makeGetRequest('https://tritoes.hdiogosilva.xyz/game.html');
+        var response = makeGetRequest();
         console.log(response.data);
         console.log('Statement 2');
     }
