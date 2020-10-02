@@ -616,8 +616,8 @@
     btn2.onclick = function() {
         next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
         document.getElementById("mapa").src = next_image
-
         modal.style.display = "none";
+
         btn2 = document.getElementById("myBtn" + (image_src_number + 2));
         modal = document.getElementById("myModal" + (image_src_number + 1));
     }
