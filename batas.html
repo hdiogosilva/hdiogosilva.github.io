@@ -617,7 +617,8 @@
         next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
         document.getElementById("mapa").src = next_image
         modal.style.display = "none";
-        modal = document.getElementById("myModal" + (image_src_number + 1));
+
+        let modal = document.getElementById("myModal" + (image_src_number + 1));
     }
 
     // When the user clicks on <span> (x), close the modal
