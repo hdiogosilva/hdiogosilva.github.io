@@ -383,21 +383,113 @@
             <button id="opt3" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;" disabled> Opt3 </button>
 
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="myModal1" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content ">
                     <span class="close">&times;</span>
-                    <h2> </h2>
-
+                    <h2 id='perguntaID'> Quem é que desapareceu? </h2>
                     <div>
-                        <input type="radio" id="resposta1" name="resposta" checked>
-                        <label for="resposta1"> Scales </label>
+                        <input type="radio" id="resposta1" name="resposta" value="0" checked>
+                        <label for="resposta1"> Salamandra </label>
                     </div>
 
                     <div>
-                        <input type="radio" id="resposta2" name="resposta">
-                        <label for="resposta2"> Horns </label>
+                        <input type="radio" id="resposta2" name="resposta" value="1">>
+                        <label for="resposta2"> Tritão Marmorado </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta3" name="resposta" value="0">
+                        <label for="resposta2"> Tritão de Ventre Laranja </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta4" name="resposta" value="0">
+                        <label for="resposta2"> Rã </label>
+                    </div>
+                    <button id="myBtn2"></button>
+                </div>
+
+            </div>
+
+            <div id="myModal2" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content ">
+                    <span class="close">&times;</span>
+                    <h2 id='perguntaID'> Qual destes animais não é amigo do Tritão? </h2>
+                    <div>
+                        <input type="radio" id="resposta1" name="resposta" value="0" checked>
+                        <label for="resposta1"> Rato </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="resposta2" name="resposta" value="1">
+                        <label for="resposta2"> Gato </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta3" name="resposta" value="0">
+                        <label for="resposta2"> Carpas </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta4" name="resposta" value="0">
+                        <label for="resposta2"> Chapim </label>
+                    </div>
+                    <button id="myBtn2"></button>
+                </div>
+
+            </div>
+
+
+            <div id="myModal3" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content ">
+                    <span class="close">&times;</span>
+                    <h2 id='perguntaID'> De que família são as camélias favoritas do rato? </h2>
+                    <div>
+                        <input type="radio" id="resposta1" name="resposta" value="1" checked>
+                        <label for="resposta1"> Theaceae </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="resposta2" name="resposta" value="0">
+                        <label for="resposta2"> Malvaceae </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta3" name="resposta" value="0">
+                        <label for="resposta2"> Trimulaceae </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta4" name="resposta" value="0">
+                        <label for="resposta2"> Lilaceae </label>
+                    </div>
+                    <button id="myBtn2"></button>
+                </div>
+
+            </div>
+
+            <div id="myModal4" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content ">
+                    <span class="close">&times;</span>
+                    <h2 id='perguntaID'> Qual é o tamanho da lentilha de água? </h2>
+                    <div>
+                        <input type="radio" id="resposta1" name="resposta" value="0" checked>
+                        <label for="resposta1"> Tão pequeno que não se vê. </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="resposta2" name="resposta" value="1">
+                        <label for="resposta2"> Mais pequena que um botão </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta3" name="resposta" value="0">
+                        <label for="resposta2"> Do tamanho de um pato. </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta4" name="resposta" value="0">
+                        <label for="resposta2"> Do tamanho de uma roda de carro. </label>
                     </div>
                     <button id="myBtn2"></button>
                 </div>
@@ -412,7 +504,7 @@
                 <h2 class="w3-text-light-grey ">Objetivo</h2>
                 <hr style="width:200px " class="w3-opacity ">
                 <p>Conseguirás descobrir o responsável pelo desaparecimento do Tritão? </p>
-            
+
                 <div class="w3-white ">
                 </div><br>
 
@@ -502,25 +594,16 @@
 
 </body>
 <script>
-    function pergunta() {
-        image_src = document.getElementById("mapa ").src
-        image_src_number = parseInt((image_src.slice(image_src.length - 5))[0])
-
-        if (image_src_number == 1) {
-
-        } else {
-            next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
-            document.getElementById("mapa ").src = next_image
-        }
-
-
-    }
+    image_src = document.getElementById("mapa").src
+    image_src_number = parseInt((image_src.slice(image_src.length - 5))[0])
 
     // Get the modal
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById("myModal" + image_src_number);
 
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
+
+    var btn2 = document.getElementById("myBtn2");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -528,6 +611,12 @@
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
         modal.style.display = "block";
+    }
+
+    btn2.onclick = function() {
+        modal.style.display = "none";
+        next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
+        document.getElementById("mapa").src = next_image
     }
 
     // When the user clicks on <span> (x), close the modal
