@@ -474,36 +474,31 @@
 
 </body>
 <script async=True>
-    /*const makeGetRequest = async() => {
-                                                                        try {
-                                                                            const response = await fetch('https://tritoes.hdiogosilva.xyz/game.html')
-                                                                            if (response.status === 200) {
-                                                                                console.log(response.data)
-                                                                                const myJson = await response.json(); //extract JSON from the http response
-                                                                                console.log(myJson);
-                                                                                return response
-                                                                            } else {
-                                                                                console.log("not a 200");
-                                                                            }
-                                                                        } catch (err) {
-                                                                            // catches errors both in fetch and response.json
-                                                                            console.log(err);
-                                                                        } finally {
-                                                                            // do it again in 2 seconds
-                                                                            setTimeout(getMachineAction, 2000);
-                                                                        }
-                                                                    }
+    let socket = new WebSocket("ws://tritoes.hdiogosilva.xyz/game.html");
 
-                                                                    makeGetRequest()*/
+    socket.onopen = function(e) {
+        alert("[open] Connection established");
+        alert("Sending to server");
+        socket.send("My name is John");
+    };
 
-    axios.interceptors.response.use((response) => {
-        // Do something with response data
-        console.log(response)
-        return response;
-    }, (error) => {
-        // Do something with response error
-        return Promise.reject(error);
-    });
+    socket.onmessage = function(event) {
+        alert(`[message] Data received from server: ${event.data}`);
+    };
+
+    socket.onclose = function(event) {
+        if (event.wasClean) {
+            alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+        } else {
+            // e.g. server process killed or network down
+            // event.code is usually 1006 in this case
+            alert('[close] Connection died');
+        }
+    };
+
+    socket.onerror = function(error) {
+        alert(`[error] ${error.message}`);
+    };
 </script>
 
 </html>
