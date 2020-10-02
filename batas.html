@@ -617,7 +617,7 @@
         next_image = image_src.slice(0, image_src.length - 5) + (image_src_number + 1) + '.jpg'
         document.getElementById("mapa").src = next_image
 
-        modal.style.display = "none";
+        document.getElementById("myModal" + image_src_number).style.display = "none";
         modal = document.getElementById("myModal" + (image_src_number + 1));
     }
 
