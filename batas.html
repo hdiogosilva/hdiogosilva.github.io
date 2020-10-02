@@ -493,7 +493,32 @@
                     </div>
                     <button id="myBtn4">Responder</button>
                 </div>
+            </div>
+            <div id="myModal5" class="modal">
 
+                <!-- Modal content -->
+                <div class="modal-content ">
+                    <span class="close">&times;</span>
+                    <h2 id='perguntaID'> Qual é o tamanho da lentilha de água 2? </h2>
+                    <div>
+                        <input type="radio" id="resposta1" name="resposta" value="0" checked>
+                        <label for="resposta1"> Tão pequeno que não se vê. </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="resposta2" name="resposta" value="1">
+                        <label for="resposta2"> Mais pequena que um botão </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta3" name="resposta" value="0">
+                        <label for="resposta3"> Do tamanho de um pato. </label>
+                    </div>
+                    <div>
+                        <input type="radio" id="resposta4" name="resposta" value="0">
+                        <label for="resposta4"> Do tamanho de uma roda de carro. </label>
+                    </div>
+                    <button id="myBtn5">Responder</button>
+                </div>
             </div>
             <!---<img src=" /assets/images/interface_bata_pistas.jpg " alt="boy " class="w3-image " width="992 " height="1108 ">>
     <!---<img src="/assets/images/interface_bata_parabens.jpg " alt="boy " class="w3-image " width="992 " height="1108 ">>
@@ -646,7 +671,7 @@
         next_image = image_src.slice(0, image_src.length - 5) + parabens + '.jpg';
         document.getElementById("mapa").src = next_image;
         modal.style.display = "none";
-        modal = document.getElementById("myModal" + 6);
+        btn.disabled = true;
     }
 
     // When the user clicks on <span> (x), close the modal
